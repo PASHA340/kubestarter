@@ -154,11 +154,23 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
 ## Execute on ALL of your Worker Nodes
 
 1. To change the name of worker-node
+  ```bash
 sudo hostnamectl set-hostname worker-1
-2
+   ```
+
+2 /etc/hosts is a system file that maps hostnames to IP addresses locally on the machine.
+
+By adding this line, you're telling the system:
+
+"Whenever you see the hostname worker-1, treat it as the IP address 127.0.0.1 (localhost)."
+```bash
 sudo bash -c "echo '127.0.0.1 worker-1' >> /etc/hosts"
+```
+
 3.Restart the server
+```bash
 sudo reboot
+```
 4. Perform pre-flight checks:
     ```bash
     sudo kubeadm reset pre-flight checks
