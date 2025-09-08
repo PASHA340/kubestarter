@@ -1,7 +1,7 @@
 1.ssh ubuntu@<master-node-ip>
 2.kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 3.kubectl get pods -n kube-system | grep metrics-server
-4.kubectl -n kube-system edit deployment metrics-server
+4.kubectl -n kube-system edit deployment metrics-server # in the spec containers add below 2 lines
     - --kubelet-preferred-address-types=InternalIP
      - --kubelet-insecure-tls
 5.kubectl rollout restart deployment metrics-server -n kube-system
