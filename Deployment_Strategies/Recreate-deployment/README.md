@@ -73,7 +73,7 @@
 
 
     ```bash
-    kubectl set image deployment/online-shop online-shop=amitabhdevops/online_shop_without_footer -n recreate-ns
+    kubectl set image deployment/online-shop online-shop=amitabhdevops/online_shop_without_footer -n rolling-ns
     
     kubectl apply -f . 
     ```
